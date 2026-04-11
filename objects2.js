@@ -49,3 +49,5 @@ console.log(users.hasOwnProperty("email")) // this will return false because the
 // but users have email property in the objects inside the array but not in the array itself
 console.log(users[0].hasOwnProperty("email")) // this will return true because the first object in the array has a property called "email"
 console.log(tinderUser2.hasOwnProperty("isLoggedIn")) // this will return true because the object tinderUser2 has a property called "isLoggedIn"
+
+
