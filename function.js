@@ -37,8 +37,34 @@ function loginIUser(username = "Guest"){ // this is a default parameter and it w
 loginIUser("Harshit") // it will not print anything because we are not storing the return value in a variable or printing it
 //console.log(loginIUser("Harshit")) // Welcome Harshit to the website 
 console.log(loginIUser()) // Welcome Guest to the website because we are not passing any argument to the function and it is trying to access the username parameter which is undefined
-console.log(loginIIUser("harshit")) // it will overwrite the previous function definition and it will work as expected
+console.log(loginIUser("harshit")) // it will overwrite the previous function definition and it will work as expected
 
+function calculateCartPrice(val1, val2, ...num1){
+    return num1
+}
+console.log(calculateCartPrice(100, 200, 300)) // 100, 200, 300
+// here ...num1 is a rest parameter because the ...num1 will take all the arguments passed to the function and store them in an array called num1
+
+// objects and functions
+const user = {
+    name: "Harshit",
+    age: 24,
+    
+}
+function handleObject(anyObject){
+    console.log(`Name: ${anyObject.name}, Age: ${anyObject.age}`);
+
+}
+handleObject(user) // Name: Harshit, Age: 24
+handleObject({name: "John", age: 30}) // Name: John, Age: 30
+
+// arrays and functions
+const numbers = [1, 2, 3, 4, 5]
+function handleArray(getArray){
+    return getArray[0]
+}
+console.log(handleArray(numbers)) // 1
+console.log(handleArray([10, 20, 30, 40, 50])) // 10
 
 
 
