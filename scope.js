@@ -11,3 +11,48 @@ console.log(c) // 30 because c is a function scope variable and it is accessible
 // here we can see that a and b are block scope variables and c is a function scope variable
 console.log(a) // 10 because a is a global variable and it is accessible anywhere in the code, (global scope)
 // var is function scope variable and it is accessible outside the block but let and const are block scope variables and they are not accessible outside the block
+
+function one(){
+    const username = "harshit"
+
+    function two(){
+        const website = "harshit.com"
+        console.log(username) // "harshit" because username is a global variable and it is accessible anywhere in the code, (global scope)
+
+    }
+    //console.log(website) // ReferenceError: website is not defined because website is a block scope variable and it is not accessible outside the block
+    two()
+}
+
+one()
+//nested functions and closures are also related to scope. 
+//A nested function is a function that is defined inside another function.
+// A closure is a function that has access to the variables in its outer scope, even after the outer function has returned. 
+//In the above example, the function two is a nested function and it has access to the variable username which is defined in the outer function one.
+
+if(true){
+    const username = "harshit"
+    if(username === "harshit"){
+        const website = "harshit.com"
+        console.log(username + website)
+    }
+    //console.log(website) // ReferenceError: website is not defined because website is a block scope variable and it is not accessible outside the block
+}
+//console.log(username) // ReferenceError: username is not defined because username is a block scope variable and it is not accessible outside the block
+
+//*****************************************interesting*****************************************
+
+console.log(addone(5)) // 6 because addone is a function declaration and it is hoisted, so we can use it before it is declared in the code
+function addone(num){
+    return num + 1
+}
+ 
+
+//nodeaddtwo(5) // ReferenceError: addtwo is not defined because addtwo is a function expression and it is not hoisted, so we cannot use it before it is declared in the code
+const addtwo = function(num){
+    return num + 2
+}
+//addtwo(5)// here we can see that addone is a function declaration and addtwo is a function expression.
+// The main difference between function declaration and function expression is that function declaration is hoisted and function expression is not hoisted. 
+// Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope during the compilation phase. 
+// This means that you can use a function before it is declared in the code when using function declarations, but you cannot do the same with function expressions.
